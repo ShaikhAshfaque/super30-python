@@ -110,3 +110,13 @@ while True:                                 # runs until break
     choice = input("Enter your choice (1-8): ")
 
     if choice == "1":
+        add_student()
+
+    elif choice == "2":
+        show_student()
+
+    elif choice == 3:
+        print(program_closed)
+        break
+    else:
+        print("Invalid choice")

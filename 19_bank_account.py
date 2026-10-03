@@ -1,142 +1,92 @@
+# Bank Account Simulator
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# balance mein account ka paisa rahega, shuru mein 0 hai.
+# balance holds the account money, it starts at 0.
 balance = 0
 
-# history ek khaali list hai, isme saari transactions likhi jaayengi.
+# history is an empty list, all transactions are saved in it.
 history = []
 
 
-# Paisa jama (deposit) karne ka function
+# Function to deposit money
 def deposit(amount):
-    global balance                          # global ka matlab: function ke andar bhi bahar wala balance hi change hoga
-                                            # (iske bina Python ek naya local variable bana leta)
-    if amount <= 0:                         # Check kiya ki amount 0 ya negative to nahi hai
-        print("Amount 0 se zyada hona chahiye!")   # Galat amount par message
-        return                              # Function yahin ruk gaya, paisa add nahi hoga
-    balance = balance + amount              # Amount ko balance mein jod diya
-    history.append("Deposit: " + str(amount))      # Transaction list mein save ki (str() number ko text banata hai taaki "Deposit: " ke saath jud sake)
-    print("Deposit ho gaya.")               # Confirmation message
+    global balance                          # global means the balance outside the function is changed
+                                            # (without it, Python would create a new local variable)
+    if amount <= 0:                         # amount must be above 0
+        print("Amount must be greater than 0!")
+        return                              # stop here, no money is added
+    balance = balance + amount              # add the amount to the balance
+    history.append("Deposit: " + str(amount))   # save the transaction (str() turns the number into text so it can join with "Deposit: ")
+    print("Deposit successful.")
 
 
-# Paisa nikalne (withdraw) ka function
+# Function to withdraw money
 def withdraw(amount):
-    global balance                          # Yahan bhi bahar wala balance change karna hai, isliye global
-    if amount <= 0:                         # Pehle check kiya ki amount 0 ya negative to nahi
-        print("Amount 0 se zyada hona chahiye!")   # Galat amount par message
-    elif amount > balance:                  # Sabse zaroori check: nikalne wala paisa balance se zyada to nahi
-        print("Balance kam hai! Withdraw nahi ho sakta.")   # Zyada hai to withdraw rok diya
-    else:                                   # Amount sahi hai aur balance bhi kaafi hai
-        balance = balance - amount          # Balance mein se paisa ghata diya
-        history.append("Withdraw: " + str(amount))  # Transaction list mein save ki
-        print("Withdraw ho gaya.")          # Confirmation message
+    global balance                          # we change the outside balance, so global is needed
+    if amount <= 0:                         # amount must be above 0
+        print("Amount must be greater than 0!")
+    elif amount > balance:                  # most important check: cannot withdraw more than the balance
+        print("Insufficient balance! Cannot withdraw.")
+    else:                                   # amount is valid and balance is enough
+        balance = balance - amount          # subtract the amount from the balance
+        history.append("Withdraw: " + str(amount))  # save the transaction
+        print("Withdrawal successful.")
 
 
-# Current balance dikhane ka function
+# Function to show the current balance
 def check_balance():
-    print("Current Balance:", balance)      # Sirf balance print karta hai
+    print("Current Balance:", balance)
 
 
-# Saari transactions dikhane ka function
+# Function to show all transactions
 def transaction_history():
-    if len(history) == 0:                   # Agar history list khaali hai
-        print("Koi transaction nahi hui.")  # To ye message dikhao
-        return                              # Aur function band
-    print("--- Transaction History ---")   # Heading print ki
-    for t in history:                       # FOR LOOP: history ki har transaction ek-ek karke t mein aayegi
-        print(t)                            # Har transaction print ki
+    if len(history) == 0:                   # history list is empty
+        print("No transactions yet.")
+        return
+    print("--- Transaction History ---")
+    for t in history:                       # each transaction comes into t one by one
+        print(t)
 
 
-# MAIN PROGRAM: ye while loop menu ko baar-baar dikhata rahega
-while True:                                 # Infinite loop, jab tak break na aaye program chalta rahega
-    print("\n1.Deposit  2.Withdraw  3.Balance  4.History  5.Exit")   # Menu dikhaya
-    choice = input("Apna choice chuno: ")   # User ka choice liya
+# MAIN PROGRAM: the while loop keeps showing the menu
+while True:                                 # runs until break
+    print("\n1.Deposit  2.Withdraw  3.Balance  4.History  5.Exit")
+    choice = input("Enter your choice: ")
 
-    if choice == "1":                       # Agar choice 1 hai
-        deposit(float(input("Amount: ")))   # Amount lekar float (number) mein badla aur deposit chalaya
-    elif choice == "2":                     # Agar choice 2 hai
-        withdraw(float(input("Amount: ")))  # Amount lekar withdraw chalaya
-    elif choice == "3":                     # Agar choice 3 hai
-        check_balance()                     # Balance dikhao
-    elif choice == "4":                     # Agar choice 4 hai
-        transaction_history()               # History dikhao
-    elif choice == "5":                     # Agar choice 5 hai
-        print("Thank you!")                 # Bye message
-        break                               # break se loop khatam, program band
-    else:                                   # 1 se 5 ke alawa kuch dala to
-        print("Galat choice!")              # Galat choice ka message
+    if choice == "1":
+        deposit(float(input("Amount: ")))   # take the amount as a number and call deposit
+    elif choice == "2":
+        withdraw(float(input("Amount: ")))
+    elif choice == "3":
+        check_balance()
+    elif choice == "4":
+        transaction_history()
+    elif choice == "5":
+        print("Thank you!")
+        break                               # stop the loop, the program ends
+    else:                                   # anything other than 1 to 5
+        print("Wrong choice!")
 
-# ---------- Example output ----------
-# Apna choice chuno: 1
+
+# Example output:
+# Enter your choice: 1
 # Amount: 5000
-# Deposit ho gaya.
+# Deposit successful.
 #
-# Apna choice chuno: 2
+# Enter your choice: 2
 # Amount: 2000
-# Withdraw ho gaya.
+# Withdrawal successful.
 #
-# Apna choice chuno: 2
+# Enter your choice: 2
 # Amount: 9000
-# Balance kam hai! Withdraw nahi ho sakta.
+# Insufficient balance! Cannot withdraw.
 #
-# Apna choice chuno: 3
+# Enter your choice: 3
 # Current Balance: 3000.0
 #
-# Apna choice chuno: 4
+# Enter your choice: 4
 # --- Transaction History ---
 # Deposit: 5000.0
 # Withdraw: 2000.0
-#
-# Note: Amount mein text (jaise "abc") daalne par float() error dega
-# aur program crash ho jaayega. Simple rakhne ke liye ise handle nahi kiya.
+
+# Note: Typing text like "abc" as the amount will cause an error in float().
+# It is not handled here to keep the code simple.

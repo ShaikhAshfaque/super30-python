@@ -16,10 +16,10 @@ The assignment covers:
 - Variables and data types
 - Input and output
 - Conditional statements
-- `for` loops
-- `while` loops
+- for loops
+- while loops
 - Nested loops
-- `break` and `continue`
+- break and continue
 - Lists and dictionaries
 - Functions
 - Menu-driven programs
