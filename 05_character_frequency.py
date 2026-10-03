@@ -1,70 +1,71 @@
-# 5.Character Frequency Counter
+# 5. Character Frequency Counter
 # Take a string from the user and calculate how many times each character occurs. Example: "banana" should identify the frequencies of b, a, and n.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# User se ek string input le rahe hain
 text = input("Enter a string: ")
 
-# Empty dictionary bana rahe hain
-# Is dictionary mein har character ki frequency store hogi
 frequency = {}
 
-# String ke har character par loop chalega
-# Example: "banana" mein b, a, n, a, n, a ek-ek karke check honge
-for i in text:
-
-    # Check kar rahe hain ki current character
-    # pehle se dictionary mein available hai ya nahi
-    if i in frequency:
-
-        # Agar character already dictionary mein hai
-        # to uski existing frequency mein 1 add kar rahe hain
-        frequency[i] = frequency[i] + 1
-
+for character in text:
+    if character in frequency:
+        frequency[character] = frequency[character] + 1
     else:
+       frequency[character] = 1
 
-        # Agar character pehli baar mila hai
-        # to uski frequency 1 set kar rahe hain
-        frequency[i] = 1
-
-# Heading print kar rahe hain
 print("Character Frequency:")
 
-# Dictionary ke har character par loop chalega
 for i in frequency:
-
-    # Character aur uski frequency print kar rahe hain
     print(i, ":", frequency[i])
 
+
+
+
+
+
+
+# Taking a string input from the user
+## text = input("Enter a string: ")
+
+# Creating an empty dictionary
+# This dictionary will store the frequency of each character
+## frequency = {}
+
+# The loop will run for each character in the string
+# Example: In "banana", b, a, n, a, n, a will be checked one by one
+## for i in text:
+
+    # Checking whether the current character
+    # is already available in the dictionary
+    ## if i in frequency:
+
+        # If the character is already in the dictionary
+        # then adding 1 to its existing frequency
+        ## frequency[i] = frequency[i] + 1
+
+    ## else:
+
+        # If the character is found for the first time
+        # then setting its frequency to 1
+        ## frequency[i] = 1
+
+# Printing the heading
+## print("Character Frequency:")
+
+# The loop will run for each character in the dictionary
+## for i in frequency:
+
+    # Printing the character and its frequency
+    ## print(i, ":", frequency[i])
+
 # Example:
-# Agar input "banana" hai:
+# If the input is "banana":
 #
-# Pehli baar b mila  -> b : 1
-# Pehli baar a mila  -> a : 1
-# Pehli baar n mila  -> n : 1
-# Dobara a mila      -> a : 2
-# Dobara n mila      -> n : 2
-# Dobara a mila      -> a : 3
+# b is found for the first time -> b : 1
+# a is found for the first time -> a : 1
+# n is found for the first time -> n : 1
+# a is found again               -> a : 2
+# n is found again               -> n : 2
+# a is found again               -> a : 3
 #
 # Final Output:
 # Character Frequency:

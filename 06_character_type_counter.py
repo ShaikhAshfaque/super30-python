@@ -1,6 +1,35 @@
 # 6. Vowel, Consonant, Digit and Space Counter
 # Create a program that analyzes a sentence and counts vowels, consonants, digits, spaces, and special characters separately.
 
+text = input("Enter a sentence: ")
+
+vowels = 0
+consonants = 0
+digits = 0
+spaces = 0
+special_characters = 0
+
+
+
+for character in text:
+    if character.lower() in "aeiou":
+         vowels += 1
+    elif character.isalpha():
+         consonants = consonants + 1
+    elif character == " ":
+         spaces = spaces + 1
+    else:
+         special_characters = special_characters + 1
+
+
+print("Vowels:", vowels)
+print(consonants)
+print(digits)
+print(spaces)
+print(special_characters)
+
+
+
 
 # Taking a sentence input from the user
 ## text = input("Enter a sentence: ")
