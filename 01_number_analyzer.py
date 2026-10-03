@@ -22,21 +22,23 @@
 # Maintain correct indentation.
 # Remember: LOOP → CONDITION → UPDATE → OUTPUT 🔥
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-even_numbers = []
-odd_numbers = []
-
-for number in numbers:
-    if number % 2 == 0:
-        even_numbers.append(number)
-    else:
-        odd_numbers.append(number)
-
-print("Even Numbers:", even_numbers)
-print("Odd Numbers:", odd_numbers)
 
 # 1.Take a number N from the user. 
 # Print all numbers from 1 to N, identify whether each number is even or odd, and finally display the total count of even and odd numbers.
+
+L = [1,2,3,4,5,6,7,8,9,10]
+l_even = []
+l_odd = []
+
+for i in L:
+    if i % 2 == 0:
+        l_even.append(i)
+    else:
+        l_odd.append(i)
+
+print(l_even)
+print(l_odd)
+
 
 
 # Taking a number N from the user

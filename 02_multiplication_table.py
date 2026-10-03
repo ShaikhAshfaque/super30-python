@@ -1,28 +1,27 @@
-# 2.Multiplication Table Generator
+# 2. Multiplication Table Generator
 # Take a number from the user and print its multiplication table from 1 × N through 10 × N using a for loop. Then modify the program so the ending range can also be supplied by the user.
 
-number = int(input("Enter a number: "))
-end = int(input("Enter a ending range: "))
+n = int(input("Enter a number: "))
 
-for i in range(1, end+1):
-    print(i, "X", number, "=", i * number)
+for i in range(1, 11):
+    print(i, "×", n, "=", i * n)
+    
 
+# Taking a number input from the user
+## n = int(input("Enter a number: "))
 
-# User se ek number input le rahe hain
-# n = int(input("Enter a number: "))
+# The loop will run from 1 to 10
+# range(1, 11) does not include 11
+# Therefore, the values will be 1, 2, 3, ..., 10
+# for i in range(1, 11):
 
-# 1 se 10 tak loop chalega
-# range(1, 11) mein 11 include nahi hota
-# Isliye values 1, 2, 3, ..., 10 hongi
-#for i in range(1, 11):
-
-    # Current number i ko n se multiply kar rahe hain
-    # Example: i = 2 aur n = 5
+    # Multiplying the current number i by n
+    # Example: i = 2 and n = 5
     # 2 * 5 = 10
-#    print(i, "×", n, "=", i * n)
+##    print(i, "×", n, "=", i * n)
 
 # Example:
-# Agar user n = 5 enter karega:
+# If the user enters n = 5:
 #
 # 1 × 5 = 5
 # 2 × 5 = 10
