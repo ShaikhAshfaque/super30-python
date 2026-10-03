@@ -1,3 +1,27 @@
+# 5.Character Frequency Counter
+# Take a string from the user and calculate how many times each character occurs. Example: "banana" should identify the frequencies of b, a, and n.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # User se ek string input le rahe hain
 text = input("Enter a string: ")
 

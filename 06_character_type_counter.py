@@ -1,72 +1,76 @@
-# User se ek sentence input le rahe hain
-text = input("Enter a sentence: ")
+# 6. Vowel, Consonant, Digit and Space Counter
+# Create a program that analyzes a sentence and counts vowels, consonants, digits, spaces, and special characters separately.
 
-# Vowels ki counting ke liye variable
-# Starting value 0 rakhi hai kyunki abhi koi vowel count nahi hua
-vowels = 0
 
-# Consonants ki counting ke liye variable
-consonants = 0
+# Taking a sentence input from the user
+## text = input("Enter a sentence: ")
 
-# Digits (0-9) ki counting ke liye variable
-digits = 0
+# Variable for counting vowels
+# Starting value is set to 0 because no vowel has been counted yet
+## vowels = 0
 
-# Spaces ki counting ke liye variable
-spaces = 0
+# Variable for counting consonants
+## consonants = 0
 
-# Special characters ki counting ke liye variable
-special_characters = 0
+# Variable for counting digits (0-9)
+## digits = 0
 
-# Sentence ke har ek character par loop chalega
-# Example: "Hello 123!" mein H, e, l, l, o, space, 1, 2, 3, ! ek-ek karke check honge
-for i in text:
+# Variable for counting spaces
+## spaces = 0
 
-    # i.lower() character ko lowercase mein convert karta hai
-    # "aeiou" mein check kar rahe hain ki character vowel hai ya nahi
-    # Example: A -> a, isliye capital A bhi vowel count hoga
-    if i.lower() in "aeiou":
+# Variable for counting special characters
+## special_characters = 0
 
-        # Agar character vowel hai to vowels ki counting 1 se increase hogi
-        vowels += 1
+# The loop will run for each character in the sentence
+# Example: In "Hello 123!", H, e, l, l, o, space, 1, 2, 3, ! will be checked one by one
+## for i in text:
 
-    # isalpha() check karta hai ki character alphabet hai ya nahi
-    # Agar vowel nahi tha aur alphabet hai, to woh consonant hoga
-    elif i.isalpha():
+    # i.lower() converts the character to lowercase
+    # Checking in "aeiou" whether the character is a vowel or not
+    # Example: A -> a, so capital A will also be counted as a vowel
+    ## if i.lower() in "aeiou":
 
-        # Consonant ki counting 1 se increase kar rahe hain
-        consonants += 1
+        # If the character is a vowel, the vowel count will increase by 1
+        ## vowels += 1
 
-    # isdigit() check karta hai ki character 0-9 mein se koi digit hai ya nahi
-    elif i.isdigit():
+    # isalpha() checks whether the character is an alphabet or not
+    # If it is not a vowel and is an alphabet, then it will be a consonant
+    ## elif i.isalpha():
 
-        # Agar digit hai to digits ki counting 1 se increase hogi
-        digits += 1
+        # Increasing the consonant count by 1
+        ## consonants += 1
 
-    # Check kar rahe hain ki current character ek normal space " " hai ya nahi
-    elif i == " ":
+    # isdigit() checks whether the character is a digit from 0-9
+    ## elif i.isdigit():
 
-        # Agar space hai to spaces ki counting 1 se increase hogi
-        spaces += 1
+        # If it is a digit, the digit count will increase by 1
+        ## digits += 1
 
-    # Agar character vowel, consonant, digit ya space nahi hai
-    # To woh special character maana jayega
+    # Checking whether the current character is a normal space " " or not
+    ## elif i == " ":
+
+        # If it is a space, the space count will increase by 1
+        ## spaces += 1
+
+    # If the character is not a vowel, consonant, digit, or space
+    # Then it will be considered a special character
     # Example: !, @, #, $, %, & etc.
-    else:
+    ## else:
 
-        # Special character ki counting 1 se increase kar rahe hain
-        special_characters += 1
+        # Increasing the special character count by 1
+        ## special_characters += 1
 
-# Total vowels print kar rahe hain
-print("Vowels:", vowels)
+# Printing the total number of vowels
+## print("Vowels:", vowels)
 
-# Total consonants print kar rahe hain
-print("Consonants:", consonants)
+# Printing the total number of consonants
+## print("Consonants:", consonants)
 
-# Total digits print kar rahe hain
-print("Digits:", digits)
+# Printing the total number of digits
+## print("Digits:", digits)
 
-# Total spaces print kar rahe hain
-print("Spaces:", spaces)
+# Printing the total number of spaces
+## print("Spaces:", spaces)
 
-# Total special characters print kar rahe hain
-print("Special Characters:", special_characters)
+# Printing the total number of special characters
+## print("Special Characters:", special_characters)

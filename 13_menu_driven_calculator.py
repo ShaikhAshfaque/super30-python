@@ -1,56 +1,55 @@
 # 13. Menu-Driven Calculator
 
-# Ye calculator while loop ki wajah se continuously chalta rahega.
-# Jab tak user Exit (6) choose nahi karta, menu baar-baar dikhega.
+# The calculator keeps running because of the while loop.
+# The menu shows again and again until the user chooses Exit (6).
 
-while True:                                 # Infinite loop, jab tak break na aaye calculator chalta rahega
-    print("\n===== CALCULATOR =====")       # Heading print ki (\n se pehle ek khaali line aati hai)
-    print("1. Addition")                    # Option 1
-    print("2. Subtraction")                 # Option 2
-    print("3. Multiplication")              # Option 3
-    print("4. Division")                    # Option 4
-    print("5. Modulus")                     # Option 5
-    print("6. Exit")                        # Option 6
+while True:                                 # runs until break
+    print("\n===== CALCULATOR =====")       # \n prints an empty line first
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulus")
+    print("6. Exit")
 
-    choice = input("Enter your choice: ")   # User ka choice liya (1, 2, 3... mein se koi ek)
+    choice = input("Enter your choice: ")   # take the user's choice
 
-    # ---------- Exit check ----------
-    if choice == "6":                       # Agar user ne 6 choose kiya
-        print("Calculator closed.")         # Calculator band hone ka message
-        break                               # break loop ko rok deta hai, isliye calculator close ho jaata hai
+    # Exit check
+    if choice == "6":
+        print("Calculator closed.")
+        break                               # stop the loop, so the calculator closes
 
-    # ---------- Numbers lena ----------
-    num1 = float(input("Enter first number: "))    # Pehla number liya aur float mein badla (decimal numbers bhi chalenge, jaise 20.5)
-    num2 = float(input("Enter second number: "))   # Doosra number liya aur float mein badla
+    # Take the numbers (float allows decimals like 20.5)
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
 
-    # ---------- Operation chunna ----------
-    if choice == "1":                       # Agar choice 1 hai (Addition)
-        print("Result:", num1 + num2)       # Jodke result print kiya. Jaise 20 + 5 = 25
+    # Perform the chosen operation
+    if choice == "1":                       # Addition
+        print("Result:", num1 + num2)
 
-    elif choice == "2":                     # Agar choice 2 hai (Subtraction)
-        print("Result:", num1 - num2)       # Ghatake result print kiya. Jaise 20 - 5 = 15
+    elif choice == "2":                     # Subtraction
+        print("Result:", num1 - num2)
 
-    elif choice == "3":                     # Agar choice 3 hai (Multiplication)
-        print("Result:", num1 * num2)       # Guna karke result print kiya. Jaise 20 * 5 = 100
+    elif choice == "3":                     # Multiplication
+        print("Result:", num1 * num2)
 
-    elif choice == "4":                     # Agar choice 4 hai (Division)
-        if num2 == 0:                       # Zaroori check: doosra number 0 hai kya? (20 / 0 se Python mein error aata hai)
-            print("Cannot divide by zero.") # 0 hai to error ki jagah ye message dikhaya
-        else:                               # Doosra number 0 nahi hai
-            print("Result:", num1 / num2)   # To division kar diya
+    elif choice == "4":                     # Division
+        if num2 == 0:                       # dividing by 0 causes an error, so check first
+            print("Cannot divide by zero.")
+        else:
+            print("Result:", num1 / num2)
 
-    elif choice == "5":                     # Agar choice 5 hai (Modulus)
-        # % modulus operator hai, ye division ka remainder deta hai. Jaise 10 % 3 = 1
-        if num2 == 0:                       # Yahan bhi 0 check kiya, kyunki 0 se modulus bhi nahi ho sakta
-            print("Cannot find modulus with zero.")   # 0 hai to message
-        else:                               # 0 nahi hai
-            print("Result:", num1 % num2)   # To remainder print kiya
+    elif choice == "5":                     # Modulus (% gives the remainder, e.g. 10 % 3 = 1)
+        if num2 == 0:                       # modulus by 0 is also not allowed
+            print("Cannot find modulus with zero.")
+        else:
+            print("Result:", num1 % num2)
 
-    else:                                   # Upar ke koi bhi choice match nahi hue
-        print("Invalid choice. Please try again.")    # Galat choice ka message
+    else:                                   # no valid choice matched
+        print("Invalid choice. Please try again.")
 
 
-# ---------- Example output ----------
+# Example output:
 # ===== CALCULATOR =====
 # 1. Addition
 # 2. Subtraction
@@ -72,17 +71,14 @@ while True:                                 # Infinite loop, jab tak break na aa
 # Enter your choice: 6
 # Calculator closed.
 
-# ---------- Interview / Assignment mein yaad rakho ----------
-# while True    → calculator continuously run karne ke liye
-# if / elif     → operation choose karne ke liye
-# +             → Addition
-# -             → Subtraction
-# *             → Multiplication
-# /             → Division
-# %             → Modulus (remainder)
-# break         → loop stop karne ke liye
-# num2 == 0     → division by zero handle karne ke liye
+# Key points:
+# while True  -> keeps the calculator running
+# if / elif   -> chooses the operation
+# +  -  *  /  -> add, subtract, multiply, divide
+# %           -> modulus (remainder)
+# break       -> stops the loop
+# num2 == 0   -> handles division by zero
 
-# Note: Is code mein galat choice (jaise 9) dene par bhi pehle dono numbers maange jaate hain,
-# phir "Invalid choice" aata hai. Simple rakhne ke liye aise hi rakha hai.
-# Numbers mein text (jaise "abc") daalne par float() error dega.
+# Note: If the choice is invalid (like 9), both numbers are still asked first,
+# and then "Invalid choice" is shown. It is kept this way to stay simple.
+# Typing text like "abc" as a number will cause an error in float().

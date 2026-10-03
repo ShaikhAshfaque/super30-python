@@ -1,38 +1,33 @@
-# User se ek number N input le rahe hain
-N = int(input("Enter a number: "))
+# 7. Prime Number Finder
+# Ask the user for a starting and ending number.
+# Print all prime numbers within that range using nested loops.
 
-# Even numbers ko store karne ke liye empty list bana rahe hain
-l_even = []
+start = int(input("Enter starting number: "))  # Takes the starting number from the user
+end = int(input("Enter ending number: "))      # Takes the ending number from the user
 
-# Odd numbers ko store karne ke liye empty list bana rahe hain
-l_odd = []
+print("Prime number: ")  # Displays a heading before printing the prime numbers
 
-# 1 se N tak loop chalega
-# N + 1 isliye likha hai kyunki range() ka last number include nahi hota
-for i in range(1, N + 1):
+# Go through every number from start to end
+for number in range(start, end + 1):
 
-    # Check kar rahe hain ki i ko 2 se divide karne par remainder 0 hai ya nahi
-    # % ka matlab remainder hota hai
-    # Agar remainder 0 hai, to number Even hai
-    if i % 2 == 0:
+    # Prime numbers are greater than 1
+    if number > 1:
 
-        # Current number ko Even print kar rahe hain
-        print(i, "is Even")
+        # Assume the number is prime at first
+        is_prime = True
 
-        # Current number i ko l_even list mein add kar rahe hain
-        # append(i) ka matlab current i ko list mein add karo
-        l_even.append(i)
+        # Check if the number can be divided by any number
+        # from 2 up to number - 1
+        for i in range(2, number):
 
-    else:
+            # If the remainder is 0, the number is divisible
+            # by i, so it is NOT a prime number
+            if number % i == 0:
+                is_prime = False
 
-        # Agar i % 2 == 0 False hai, to number Odd hai
-        print(i, "is Odd")
+                # No need to check further
+                break
 
-        # Current number i ko l_odd list mein add kar rahe hain
-        l_odd.append(i)
-
-# len(l_even) Even list ke total numbers ki counting karega
-print("Total Even Numbers:", len(l_even))
-
-# len(l_odd) Odd list ke total numbers ki counting karega
-print("Total Odd Numbers:", len(l_odd))
+        # If no divisor was found, the number is prime
+        if is_prime:
+            print(number)

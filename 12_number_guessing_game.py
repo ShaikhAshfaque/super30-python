@@ -1,28 +1,27 @@
 # 12. Number Guessing Game
 
-# random Python ka module hai jo random numbers banane ke liye use hota hai.
-import random
+import random                       # random module is used to create random numbers
 
-number = random.randint(1, 100)             # 1 se 100 ke beech ek random secret number banaya (jaise 57). User ko ye number nahi dikhega
-attempts = 0                                # Attempts ko 0 se shuru kiya, kyunki abhi user ne koi guess nahi kiya
+number = random.randint(1, 100)     # secret number between 1 and 100, hidden from the user
+attempts = 0                        # number of guesses so far
 
-while True:                                 # WHILE LOOP: jab tak sahi number na mile, user se guess maangta rahega
-    guess = int(input("Guess the number (1-100): "))   # User se guess liya. int() input ko number mein badalta hai
-    attempts = attempts + 1                 # Har guess ke baad attempts 1 badha diya (pehli guess = 1, doosri = 2, ...)
+while True:                         # keep asking until the guess is correct
+    guess = int(input("Guess the number (1-100): "))   # int() converts the input to a number
+    attempts = attempts + 1                            # count this guess
 
-    if guess > number:                      # Agar guess secret number se bada hai (jaise secret 57, guess 80)
-        print("Too High")                   # To "Too High" dikhao
+    if guess > number:              # guess is bigger than the secret number
+        print("Too High")
 
-    elif guess < number:                    # Nahi to agar guess secret number se chhota hai (jaise secret 57, guess 30)
-        print("Too Low")                    # To "Too Low" dikhao
+    elif guess < number:            # guess is smaller than the secret number
+        print("Too Low")
 
-    else:                                   # Na bada, na chhota, matlab guess == number, yaani sahi guess
-        print("Correct!")                   # Sahi hone ka message
-        print("Number of attempts:", attempts)   # Kitni koshish mein mila, wo print kiya
-        break                               # break se while loop ruk gaya, game khatam
+    else:                           # guess is equal to the secret number
+        print("Correct!")
+        print("Number of attempts:", attempts)
+        break                       # stop the loop, the game is over
 
 
-# ---------- Example output ----------
+# Example output:
 # Guess the number (1-100): 50
 # Too Low
 #
@@ -39,13 +38,13 @@ while True:                                 # WHILE LOOP: jab tak sahi number na
 # Correct!
 # Number of attempts: 5
 
-# ---------- Assignment requirements ----------
-# Random number 1-100          -> random.randint(1, 100)
-# while loop                   -> while True
-# User se guess lena           -> input()
-# "Too High" / "Too Low"       -> if / elif
-# Correct number par stop      -> break
-# Total attempts display       -> attempts
+# Assignment requirements:
+# Random number 1-100        -> random.randint(1, 100)
+# while loop                 -> while True
+# Take a guess from the user -> input()
+# "Too High" / "Too Low"     -> if / elif
+# Stop on correct number     -> break
+# Show total attempts        -> attempts
 
-# Note: Guess mein text (jaise "abc") daalne par int() error dega.
-# Simple rakhne ke liye ise handle nahi kiya.
+# Note: Typing text like "abc" as a guess will cause an error in int().
+# It is not handled here to keep the code simple.

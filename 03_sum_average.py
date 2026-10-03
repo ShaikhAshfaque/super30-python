@@ -1,27 +1,43 @@
+# 3.Sum and Average Without sum()
+# Given a list of numbers, calculate the total and average using a loop. Do not use Python's built-in sum() function.
+
+numbers = [10,20,30,40,50]
+
+total = 0
+
+for number in numbers:
+    total = total + number
+
+average = total / len(numbers)
+
+print("Total:", total)
+print("Average:", average)
+
+
 # Numbers ki ek list bana rahe hain
-numbers = [10, 20, 30, 40, 50]
+# numbers = [10, 20, 30, 40, 50]
 
 # Starting mein total ko 0 rakhenge
 # Abhi tak koi number add nahi hua hai
-total = 0
+# total = 0
 
 # List ke har number par loop chalega
-for i in numbers:
+#for i in numbers:
 
     # Current number ko total mein add kar rahe hain
     # Example: pehle 0 + 10 = 10
-    total = total + i
+#    total = total + i
 
 # Average nikalne ke liye total ko
 # list ke total numbers ki quantity se divide kar rahe hain
 # len(numbers) batata hai list mein kitne numbers hain
-average = total / len(numbers)
+# average = total / len(numbers)
 
 # Total print kar rahe hain
-print("Total:", total)
+# print("Total:", total)
 
 # Average print kar rahe hain
-print("Average:", average)
+# print("Average:", average)
 
 # Step-by-step:
 # Starting total = 0

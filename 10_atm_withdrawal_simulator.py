@@ -1,3 +1,10 @@
+# 10.ATM Withdrawal Simulator using while
+#Start with a balance of ₹10,000. Continuously show the user options to check balance, deposit money, withdraw money, or exit. 
+#The program should continue until the user explicitly chooses Exit.
+
+
+
+
 # 10. ATM Withdrawal Simulator using while
 
 balance = 10000                             # Shuru mein account mein Rs.10,000 hain

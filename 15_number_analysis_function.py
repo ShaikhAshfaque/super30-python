@@ -1,66 +1,62 @@
 # 15. Reusable Number Analysis Function
 
-# def function banane ke liye use hota hai.
-# analyze_number function ka naam hai aur (number) ek parameter hai.
-# Jab bhi hum function ko call karenge, ek number function ke andar aayega.
-
-# def → function banata hai
-# analyze_number → function ka naam
-# number → input / parameter
+# def is used to create a function.
+# analyze_number is the function name and (number) is the parameter.
+# Each time we call the function, a number is sent into it.
 
 def analyze_number(number):
 
-    # ---------- Step 1: Positive, Negative ya Zero check karna ----------
-    if number > 0:                          # Agar number 0 se bada hai
-        number_type = "Positive"            # To type Positive hai
-    elif number < 0:                        # Nahi to agar number 0 se chhota hai
-        number_type = "Negative"            # To type Negative hai
-    else:                                   # Upar ki dono condition galat hain, matlab number 0 hai
-        number_type = "Zero"                # To type Zero hai
+    # Step 1: Check Positive, Negative or Zero
+    if number > 0:                      # greater than 0
+        number_type = "Positive"
+    elif number < 0:                    # less than 0
+        number_type = "Negative"
+    else:                               # not positive, not negative, so it is 0
+        number_type = "Zero"
 
-    # ---------- Step 2: Even ya Odd check karna ----------
-    if number % 2 == 0:                     # % (modulus) remainder deta hai. 2 se divide karne par remainder 0 aaye to
-        parity = "Even"                     # Number Even hai
-    else:                                   # Remainder 0 nahi aaya
-        parity = "Odd"                      # To number Odd hai
+    # Step 2: Check Even or Odd
+    if number % 2 == 0:                 # % gives the remainder, remainder 0 after dividing by 2 means Even
+        parity = "Even"
+    else:
+        parity = "Odd"
 
-    # ---------- Step 3: Prime ya Not Prime check karna ----------
-    # Prime number wo hota hai jo sirf 1 aur khud se divide hota hai (jaise 2, 3, 5, 7)
-    if number < 2:                          # 2 se chhote numbers (1, 0, negative) prime nahi hote
-        prime = "Not Prime"                 # Isliye seedha Not Prime
-    else:                                   # Number 2 ya usse bada hai, ab check karna padega
-        is_prime = True                     # Pehle maan liya ki number prime hai (baad mein galat sabit ho sakta hai)
+    # Step 3: Check Prime or Not Prime
+    # A prime number is divisible only by 1 and itself (like 2, 3, 5, 7)
+    if number < 2:                      # numbers below 2 (1, 0, negatives) are not prime
+        prime = "Not Prime"
+    else:
+        is_prime = True                 # assume the number is prime
 
-        for i in range(2, number):          # FOR LOOP: i ki value 2 se (number - 1) tak jaayegi
-            if number % i == 0:             # Agar number kisi i se poora divide ho gaya (remainder 0)
-                is_prime = False            # To number prime nahi hai
-                break                       # break se loop turant ruk gaya, aage check karne ki zaroorat nahi
+        for i in range(2, number):      # i goes from 2 to number - 1
+            if number % i == 0:         # divisible by i, so it is not prime
+                is_prime = False
+                break                   # stop checking
 
-        if is_prime:                        # Loop ke baad agar is_prime abhi bhi True hai
-            prime = "Prime"                 # To number Prime hai
-        else:                               # Agar is_prime False ho gaya
-            prime = "Not Prime"             # To number Not Prime hai
+        if is_prime:                    # still True after the loop
+            prime = "Prime"
+        else:
+            prime = "Not Prime"
 
-    # ---------- Step 4: Teeno results ek saath wapas bhejna ----------
-    return {                                # return result wapas bhejta hai. Yahan dictionary bheji hai
-        "type": number_type,                # "type" key mein Positive / Negative / Zero
-        "parity": parity,                   # "parity" key mein Even / Odd
-        "prime": prime                      # "prime" key mein Prime / Not Prime
+    # Step 4: Send all three results back together
+    return {                            # return a dictionary with the results
+        "type": number_type,            # Positive / Negative / Zero
+        "parity": parity,               # Even / Odd
+        "prime": prime                  # Prime / Not Prime
     }
 
 
-result = analyze_number(7)                  # Function ko number 7 ke saath call kiya, jo wapas aaya wo result mein save hua
+result = analyze_number(7)              # call the function with 7, the returned value is saved in result
 
-print(result)                               # result ko print kiya
+print(result)
 
 
-# ---------- Output ----------
+# Output:
 # {'type': 'Positive', 'parity': 'Odd', 'prime': 'Prime'}
 
-# ---------- Aur examples ----------
+# More examples:
 # analyze_number(10)   # {'type': 'Positive', 'parity': 'Even', 'prime': 'Not Prime'}
 # analyze_number(-5)   # {'type': 'Negative', 'parity': 'Odd', 'prime': 'Not Prime'}
 # analyze_number(0)    # {'type': 'Zero', 'parity': 'Even', 'prime': 'Not Prime'}
 
-# Note: Is function mein number poora number (integer) hona chahiye.
-# Decimal number (jaise 7.5) dene par range() error dega.
+# Note: The number must be a whole number (integer).
+# A decimal number like 7.5 will cause an error in range().

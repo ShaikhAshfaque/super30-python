@@ -1,3 +1,8 @@
+# 8.Pattern Generator
+# Using nested for loops, generate the following pattern for a user-supplied value of N:
+
+
+
 # 8. Pattern Generator (Nested For Loops)
 
 # User se N ki value li. N batata hai ki pattern mein kitni rows hongi.
