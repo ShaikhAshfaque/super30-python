@@ -1,6 +1,29 @@
 # 4.Find Maximum and Minimum Without max() / min()
 # Write a program that finds the largest and smallest values in a list using loops only.
 
+
+numbers = [10, 5, 25, 3, 15, 8]
+
+largest = numbers[0]
+smallest = numbers[0]
+
+
+for i in numbers:
+    if i > largest:
+        largest = i
+
+    if i < smallest:
+        smallest = i
+print("Largest:", largest)
+print("Smallest:", smallest)
+
+
+
+
+
+
+
+
 # Making a list of numbers
 ## numbers = [10, 5, 25, 3, 15, 8]
 

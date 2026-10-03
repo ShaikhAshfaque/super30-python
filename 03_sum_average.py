@@ -1,43 +1,49 @@
 # 3.Sum and Average Without sum()
 # Given a list of numbers, calculate the total and average using a loop. Do not use Python's built-in sum() function.
 
-numbers = [10,20,30,40,50]
+
+
+numbers = [10, 20, 30, 40, 50]
 
 total = 0
 
-for number in numbers:
-    total = total + number
+for i in numbers:
+    total = total + i
 
 average = total / len(numbers)
+
 
 print("Total:", total)
 print("Average:", average)
 
 
-# Numbers ki ek list bana rahe hain
-# numbers = [10, 20, 30, 40, 50]
 
-# Starting mein total ko 0 rakhenge
-# Abhi tak koi number add nahi hua hai
-# total = 0
 
-# List ke har number par loop chalega
-#for i in numbers:
 
-    # Current number ko total mein add kar rahe hain
-    # Example: pehle 0 + 10 = 10
-#    total = total + i
+# Making a list of numbers
+## numbers = [10, 20, 30, 40, 50]
 
-# Average nikalne ke liye total ko
-# list ke total numbers ki quantity se divide kar rahe hain
-# len(numbers) batata hai list mein kitne numbers hain
-# average = total / len(numbers)
+# Setting total to 0 at the beginning
+# No number has been added yet
+## total = 0
 
-# Total print kar rahe hain
-# print("Total:", total)
+# The loop will run for each number in the list
+# for i in numbers:
 
-# Average print kar rahe hain
-# print("Average:", average)
+    # Adding the current number to total
+    # Example: first 0 + 10 = 10
+##    total = total + i
+
+# To calculate the average, dividing total by
+# the total number of numbers in the list
+# len(numbers) tells us how many numbers are in the list
+## average = total / len(numbers)
+
+# Printing the total
+## print("Total:", total)
+
+# Printing the average
+## print("Average:", average)
 
 # Step-by-step:
 # Starting total = 0
@@ -62,7 +68,7 @@ print("Average:", average)
 # total = 100 + 50
 # total = 150
 #
-# Ab total = 150
+# Now total = 150
 #
 # len(numbers) = 5
 # Average = 150 / 5
@@ -73,5 +79,5 @@ print("Average:", average)
 # Average: 30.0
 #
 # IMPORTANT:
-# sum(numbers) use nahi karna hai
-# Humne loop ke through manually total calculate kiya hai
+# Do not use sum(numbers)
+# We calculated the total manually using a loop
