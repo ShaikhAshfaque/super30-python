@@ -1,4 +1,5 @@
 # 13. Menu-Driven Calculator
+# Build a continuously running calculator using while. Provide Addition, Subtraction, Multiplication, Division, Modulus, and Exit operations. Handle division by zero properly.
 
 # The calculator keeps running because of the while loop.
 # The menu shows again and again until the user chooses Exit (6).

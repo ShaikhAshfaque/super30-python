@@ -1,4 +1,5 @@
 # 12. Number Guessing Game
+# Generate a random number between 1–100. Keep asking the user to guess until they find the correct number. After each incorrect guess, display "Too High" or "Too Low". Finally display the number of attempts taken.
 
 import random                       # random module is used to create random numbers
 

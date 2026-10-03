@@ -45,7 +45,7 @@ def analyze_number(number):
     }
 
 
-result = analyze_number(7)              # call the function with 7, the returned value is saved in result
+result = analyze_number(-7)              # call the function with 7, the returned value is saved in result
 
 print(result)
 

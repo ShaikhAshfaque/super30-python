@@ -29,7 +29,7 @@ def student_grade(m1, m2, m3, m4, m5):
 
 # How to use the function
 print(student_grade(80, 70, 90, 85, 75))    # Output: (400, 80.0, 'B')
-print(student_grade(80, 70, 190, 85, 75))   # 190 is invalid, Output: Invalid marks! Marks must be between 0 and 100.
+print(student_grade(80, 70, 59, 85, 75))   # 190 is invalid, Output: Invalid marks! Marks must be between 0 and 100.
 
 # Grade rules:
 # Percentage      Grade

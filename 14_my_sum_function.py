@@ -1,5 +1,8 @@
 # 14. Create Your Own sum() Function
-
+# Write
+# def my_sum(numbers)
+# It should accept a list of numbers and return their sum without using Python's built-in sum().
+ 
 # def is used to create a function.
 # my_sum is the function name and (numbers) is the parameter.
 # The function receives a list of numbers, like [10, 20, 30, 40, 50].
