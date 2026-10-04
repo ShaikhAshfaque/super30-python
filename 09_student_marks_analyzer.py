@@ -1,4 +1,5 @@
-# 9. Student Marks Analyzer
+#9.Student Marks Analyzer
+# Store marks of multiple students in a list. Using loops, calculate highest marks, lowest marks, average marks, number of students who passed, and number who failed. Consider 40 as the passing mark.
 
 # Marks of multiple students stored in a list
 marks = [85, 72, 38, 91, 45, 29, 67, 55]
