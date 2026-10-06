@@ -1,5 +1,5 @@
 # 3.Sum and Average Without sum()
-# Given a list of numbers, calculate the total and average using a loop. Do not use Python's built-in sum() function.
+# Given a list of numbers, calculate the total and average using a loop. clear not use Python's built-in sum() function.
 
 
 

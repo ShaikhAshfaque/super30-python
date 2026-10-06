@@ -20,10 +20,6 @@ print("Smallest:", smallest)
 
 
 
-
-
-
-
 # Making a list of numbers
 ## numbers = [10, 5, 25, 3, 15, 8]
 
